@@ -463,7 +463,7 @@ def rmtree(path, ignore_errors=False, onerror=None):
             pass
     elif onerror is None:
         def onerror(*args):
-            raise
+            raise Exception
     if _use_fd_functions:
         # While the unsafe rmtree works fine on bytes, the fd based does not.
         if isinstance(path, bytes):
